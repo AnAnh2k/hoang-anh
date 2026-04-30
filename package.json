@@ -5,7 +5,6 @@
   "main": "index.html",
   "scripts": {
     "start": "live-server",
-    "build": "echo \"Build script - thêm build tool của bạn\"",
     "dev": "echo \"Dev script - thêm dev tool của bạn\""
   },
   "keywords": [
