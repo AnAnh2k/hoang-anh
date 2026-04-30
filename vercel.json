@@ -1,0 +1,33 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.?"
+        }
+      ],
+      "destination": "/admin/admin-dashboard.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "employer.?"
+        }
+      ],
+      "destination": "/employer/employer-dashboard.html"
+    },
+    {
+      "source": "/admin/(.*)",
+      "destination": "/admin/$1"
+    },
+    {
+      "source": "/employer/(.*)",
+      "destination": "/employer/$1"
+    }
+  ]
+}

@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Logic điều hướng dựa trên tên miền (Role-based Routing)
+    (function() {
+      const host = window.location.hostname;
+      if (host.startsWith('admin.') && !window.location.pathname.includes('/admin/')) {
+        window.location.href = '/admin/admin-dashboard.html';
+      } else if (host.startsWith('employer.') && !window.location.pathname.includes('/employer/')) {
+        window.location.href = '/employer/employer-dashboard.html';
+      }
+    })();
+  </script>
   <title>JobsGO - Prototype</title>
   <link rel="stylesheet" href="css/index_2.css" />
   <style>

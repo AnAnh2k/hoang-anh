@@ -1,4 +1,4 @@
-﻿/**
+/**
  * JobsGO Layout Manager
  * Centralized configuration and component rendering for Candidate/User pages.
  */
@@ -6,8 +6,8 @@
 const JOBSGO_CONFIG = {
     brand: {
         name: "JobsGO",
-        logo: "assets/icons/logo-primary.svg",
-        link: "index.html",
+        logo: "/assets/icons/logo-primary.svg",
+        link: "/", // Sẽ được tính toán động dựa trên role
         slogan: "Kết nối đam mê, kiến tạo sự nghiệp."
     },
     navigation: [
@@ -182,6 +182,16 @@ class LayoutManager {
     constructor() {
         this.config = JOBSGO_CONFIG;
         this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        this.currentHost = window.location.hostname;
+        
+        // Tự động điều chỉnh link Logo dựa trên domain
+        if (this.currentHost.startsWith('admin.')) {
+            this.config.brand.link = "/admin/admin-dashboard.html";
+        } else if (this.currentHost.startsWith('employer.')) {
+            this.config.brand.link = "/employer/employer-dashboard.html";
+        } else {
+            this.config.brand.link = "/index.html";
+        }
     }
 
     renderHeader(containerId = 'header-container') {
