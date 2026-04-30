@@ -9,8 +9,8 @@
       const host = window.location.hostname;
       if (host.includes('-admin') && !window.location.pathname.includes('/admin/')) {
         window.location.href = '/admin/admin-dashboard.html';
-      } else if (host.includes('-employer') && !window.location.pathname.includes('/employer/')) {
-        window.location.href = '/employer/employer-dashboard.html';
+      } else if (host.includes('-employer') && !window.location.pathname.includes('employer-dashboard')) {
+        window.location.href = '/employer-dashboard.html';
       }
     })();
   </script>

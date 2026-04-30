@@ -31,10 +31,10 @@
           "value": "(.*)-employer.?"
         }
       ],
-      "destination": "/employer/employer-dashboard.html"
+      "destination": "/employer-dashboard.html"
     },
     {
-      "source": "/((?!admin|employer|css|js|assets).*)",
+      "source": "/((?!admin|css|js|assets).*)",
       "has": [
         {
           "type": "host",
@@ -42,16 +42,6 @@
         }
       ],
       "destination": "/admin/$1"
-    },
-    {
-      "source": "/((?!admin|employer|css|js|assets).*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "(.*)-employer.?"
-        }
-      ],
-      "destination": "/employer/$1"
     }
   ]
 }
