@@ -2,31 +2,23 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
-          "value": "admin.?"
+          "value": "(.*)-admin.?"
         }
       ],
-      "destination": "/admin/admin-dashboard.html"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "employer.?"
-        }
-      ],
-      "destination": "/employer/employer-dashboard.html"
-    },
-    {
-      "source": "/admin/(.*)",
       "destination": "/admin/$1"
     },
     {
-      "source": "/employer/(.*)",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(.*)-employer.?"
+        }
+      ],
       "destination": "/employer/$1"
     }
   ]

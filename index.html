@@ -7,9 +7,9 @@
     // Logic điều hướng dựa trên tên miền (Role-based Routing)
     (function() {
       const host = window.location.hostname;
-      if (host.startsWith('admin.') && !window.location.pathname.includes('/admin/')) {
+      if (host.includes('-admin') && !window.location.pathname.includes('/admin/')) {
         window.location.href = '/admin/admin-dashboard.html';
-      } else if (host.startsWith('employer.') && !window.location.pathname.includes('/employer/')) {
+      } else if (host.includes('-employer') && !window.location.pathname.includes('/employer/')) {
         window.location.href = '/employer/employer-dashboard.html';
       }
     })();

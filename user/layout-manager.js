@@ -185,9 +185,9 @@ class LayoutManager {
         this.currentHost = window.location.hostname;
         
         // Tự động điều chỉnh link Logo dựa trên domain
-        if (this.currentHost.startsWith('admin.')) {
+        if (this.currentHost.includes('-admin')) {
             this.config.brand.link = "/admin/admin-dashboard.html";
-        } else if (this.currentHost.startsWith('employer.')) {
+        } else if (this.currentHost.includes('-employer')) {
             this.config.brand.link = "/employer/employer-dashboard.html";
         } else {
             this.config.brand.link = "/index.html";
