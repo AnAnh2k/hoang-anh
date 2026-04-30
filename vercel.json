@@ -2,7 +2,39 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/css/(.*)",
+      "destination": "/css/$1"
+    },
+    {
+      "source": "/js/(.*)",
+      "destination": "/js/$1"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "(.*)-admin.?"
+        }
+      ],
+      "destination": "/admin/admin-dashboard.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "(.*)-employer.?"
+        }
+      ],
+      "destination": "/employer/employer-dashboard.html"
+    },
+    {
+      "source": "/((?!admin|employer|css|js|assets).*)",
       "has": [
         {
           "type": "host",
@@ -12,7 +44,7 @@
       "destination": "/admin/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!admin|employer|css|js|assets).*)",
       "has": [
         {
           "type": "host",
